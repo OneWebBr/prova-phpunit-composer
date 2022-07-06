@@ -47,6 +47,8 @@ Os testes unitários usando PHPUnit devem validar uma determinada rota, retornan
         $this->assertFalse($service->isValida([]));
         $this->assertFalse($service->isValida(['RS']));
         $this->assertFalse($service->isValida(['RS', 'PR', 'SP', 'MG']));
+        $this->assertFalse($service->isValida(['RS', 'SC', 'PR', 'SP', 'MS', 'MT', 'RO', 'AM', 'RR', 'TO']));
+        $this->assertFalse($service->isValida(['RS', 'SC', 'PR', 'SP', 'AM', 'PA', 'MA']));
         $this->assertFalse($service->isValida(['PR', 'RS']));
     }
 ```
